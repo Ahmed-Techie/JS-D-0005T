@@ -1,118 +1,126 @@
-// // Question for Anonymous & IIFE Functions:
-
-// //Q - Print odd numbers in an array
+// //               1.Question for Anonymous Function & IIFE Functions:
+/* /////////////////////////////////////////////////////////////////////////////// */
+// //1.Q.a. - Print odd numbers in an array
 // //Anonymous  : 
 
-// var arr = [12,13,14,15,17,19,21]
-// var result =[];
-// var odd = function(arr){
-//      for(var i=0;i<arr.length;i++){
-//         if(arr[i]%2!=0){
-//            result.push(arr[i]);
-//         }
-//     }
-//     return result;
-// }
+var arr = [12,13,14,15,17,19,21]
+var result =[];
+var odd = function(arr){
+     for(var i=0;i<arr.length;i++){
+        if(arr[i]%2!=0){
+           result.push(arr[i]);
+        }
+    }
+    return result;
+}
 
-// console.log(odd(arr));
+console.log(odd(arr));
 
-    // function (array){
-    //               for(var i = 0 ; i< array.length ; i++){
-    //                     if(array[i]%2!==0){
-    //                        console.log(array[i])
-    //                     } 
-    //                }
-    //             }
+//************************************************* */ 
+// //IIFE :   
 
-    // ( function odd(arr){
-    //     var result =[];
-    //           for(var i=0;i<arr.length;i++){
-    //               if(arr[i]%2!=0){
-    //                  result.push(arr[i]);
-    //               }
-    //           }
-    //         console.log (result);
-    //       }
-    //      )([12,13,14,15,17,19])
-
-
-// //IIFE :    
-
-//    (function(array){
-//              for(var i = 0 ; i< array.length ; i++){
-//                         if(array[i]%2!=0){
-//                            console.log(array[i])
-//                         } 
-//                    }
-//              })([1,2,3,4])
-
-// //Q - Convert all the strings to title caps in a string array  
+    ( function (arr){
+        var result =[];
+              for(var i=0;i<arr.length;i++){
+                  if(arr[i]%2!=0){
+                     result.push(arr[i]);
+                  }
+              }
+            console.log (result);
+          }
+         )([12,13,14,15,17,19])
+         
+//************************************************* */ 
+// //1.Q.b. - Convert all the strings to title caps in a string array  
 // //Anonymous :   
 
-    function (str) {
+var str = "hi, this is ahmed ! anonymous function";
+var cap = function (str) {
                                 str = str.toLowerCase().split(' ');
                                 for (var i = 0; i < str.length; i++) {
                                   str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
                                 } 
                                 return str.join(' ');
                               }
+                              console.log(cap(str));
 
+//************************************************* */ 
 // //IIFE :
 
-//     (function (str) {
-//                                 str = str.toLowerCase().split(' ');
-//                                 for (var i = 0; i < str.length; i++) {
-//                                   str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
-//                                 } 
-//                                 return str.join(' ');
-//                               })("MUDRA IS MY NAME");
+    (function (str) {
+                                str = str.toLowerCase().split(' ');
+                                for (var i = 0; i < str.length; i++) {
+                                  str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+                                } 
+                                console.log(str.join(' '));
+                              })("hi, this is ahmed ! anonymous function");
 
-// //Q - Sum of all numbers in an array 
+//************************************************* */ 
+
+// //1.Q.c. - Sum of all numbers in an array 
 // //Anonymous  :  
-
-//     function(array){
-//                   var sum = 0;
-//                   for(var i = 0 ; i< array.length ; i++){
-//                      sum = sum + array[i];
-//                    }
-//                    return sum;
-//                 }
-
+var sumofnum =[1,2,3,4];
+var son = function(sumofnum){
+                  var sum = 0;
+                  for(var i = 0 ; i< sumofnum.length ; i++){
+                     sum = sum + sumofnum[i];
+                   }
+                   return sum;
+                }
+                console.log(son(sumofnum));
+//************************************************* */ 
 // //IIFE :   
 
-//     (function(array){
-//              var sum = 0;
-//                   for(var i = 0 ; i< array.length ; i++){
-//                      sum = sum + array[i];
-//                    }
-//                    return sum;
-//              })([1,2,3,4])
+    (function(son){
+             var sum = 0;
+                  for(var i = 0 ; i< son.length ; i++){
+                     sum = sum + son[i];
+                   }
+                   
+                   console.log((sum));
+             })([1,2,3,4])
 
-// //Q - Return all the prime numbers in an array
+//************************************************* */ 
+// //1.Q.d. - Return all the prime numbers in an array
 // //Anonymous :
+        
+            var innum = [1,2,3,4];
+            var prime = [];
+            var outprime =  function(innum) {
+                                for(var i=0; i<innum.length; i++) {
+                                var sum = 0;
+                                for(var j=1; j<=innum[i]; j++) {
+                                if(innum[i]%j===0) {
+                                    sum = sum + 1;
+                                }
+                                }  
+                                if(sum === 2) {
+                                    prime.push(innum[i]);
+                                }
+                                }
+                                return prime;
+                            }
+                            console.log(outprime(innum));
 
-//     function(numArray){
-//                       numArray = numArray.filter((number) => {
-//                         for (var i = 2; i <= Math.sqrt(number); i++) {
-//                           if (number % i === 0) return false;
-//                         }
-//                         return true;
-//                       });
-//                       console.log(numArray);
-//                   }
-// //IIFE :
-//                     (  
-//                    function(numArray){
-//                       numArray = numArray.filter((number) => {
-//                         for (var i = 2; i <= Math.sqrt(number); i++) {
-//                           if (number % i === 0) return false;
-//                         }
-//                         return true;
-//                       });
-//                       console.log(numArray);
-//                   })([1,2,3,4])
-
-// //Q - Return all the palindromes in an array
+//************************************************* */ 
+ // //IIFE :
+                    var prime = [];  
+                    (function(innum){
+                        for(var i=0; i<innum.length; i++) {
+                            var sum = 0;
+                            for(var j=1; j<=innum[i]; j++) {
+                            if(innum[i]%j===0) {
+                                sum = sum + 1;
+                            }
+                            }  
+                            if(sum === 2) {
+                                prime.push(innum[i]);
+                            }
+                            }  
+                    console.log(prime);
+                    })([1,2,3,4])
+//************************************************* */ 
+// //1.Q.e. - Return all the palindromes in an array
 // //Anonymous :
 
 //     function (arr, n)
@@ -139,21 +147,36 @@
 //             return true;
 //         })([1,2,3] , 3)
 
-// //Q.Remove duplicates from an Array
+//************************************************* */ 
+// //1.Q.g. Remove duplicates from an Array
+
 // //Anonymous :
+        
+var innum = [1,2,3,4,1,3];
+var out = [];
+var outprime =  function(innum) {
+                    for(var i=0; i<innum.length; i++) {
+                    if(!out.includes(innum[i])) {
+                        out.push(innum[i]);
+                    }   
+                    }
+                    return out;
+                }
+                console.log(outprime(innum));
 
-//     function(array){
-//                         let dup = [...new Set(array)];
-//                         console.log(dup);
-//                       }
+//************************************************* */ 
+// //IIFE :
+        var out = [];  
+        (function(innum){
+            for(var i=0; i<innum.length; i++) {
+                if(!out.includes(innum[i])) {
+                    out.push(innum[i]);
+                }   
+                }
+        console.log(out.sort());
+        })([1,2,3,4,5,6,6,1,0])
 
-// //IIFE :    
-
-//     (function(array){
-//                         let dup = [...new Set(array)];
-//                         console.log(dup);
-//                        })([1,1,2,3,4])
-
+//************************************************* */ 
 // //Q.Rotate an array by K times
 // //Anonymous :
 
@@ -181,66 +204,70 @@
 //                             reverse(a, 0, a.length - 1);
 //                           })([1,2,3,4] , 2)
                        
-// // Question for Arrow Functions:
-
-// //Q)Print odd numbers in an Array
+// //                       3.Question for Arrow Functions:
+/* ///////////////////////////////////////////////////////////////////////////////// */
+// //3.Q.a.)Print odd numbers in an Array
 // //Arrow Function :
 
-// var odd = (arr)=>{
-//     var result =[];
-//         for(var i=0;i<arr.length;i++){
-//             if(arr[i]%2!=0){
-//                result.push(arr[i]);
-//             }
-//         }
-//         return result;
-// }
-// console.log(odd([12,13,14,15,17,19,21,23,24]))
+    var odd = (arr)=>{
+        var result =[];
+            for(var i=0;i<arr.length;i++){
+                if(arr[i]%2!=0){
+                result.push(arr[i]);
+                }
+            }
+            return result;
+    }
+    console.log(odd([12,13,14,15,17,19,21,23,24]))
 
-//     oddNumbers = (array) => {
-//     for(var i = 0 ; i< array.length ; i++){
-//          if(array[i]%2!=0){
-//             console.log(array[i])
-//          } 
-//     }
-//          }
+  
 
-// //Q)Convert all the strings to title caps in a string array
+// //3.Q.b.)Convert all the strings to title caps in a string array
 // //Arrow Function : 
 
-//     titleCase = (str) => {
-//                             str = str.toLowerCase().split(' ');
-//                             for (var i = 0; i < str.length; i++) {
-//                               str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
-//                             } 
-//                             return str.join(' ');
-//                           }    
+var cap = (str) => {
+                            str = str.toLowerCase().split(' ');
+                            for (var i = 0; i < str.length; i++) {
+                              str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+                            } 
+                            return(str.join(" "));
+                          }    
+                          console.log(cap("This is arrow function"));
 
-// //Q)Sum of all numbers in an array 
+// //3.Q.c.)Sum of all numbers in an array 
 // //Arrow Function :     
 
-//     sum = (array)=>{
-//                                        var sum = 0;
-//                                             for(var i = 0 ; i< array.length ; i++){
-//                                                sum = sum + array[i];
-//                                              }
-//                                              return sum;
-//                                              }    
+   var sum = (array)=>{
+                        var sum = 0;
+                            for(var i = 0 ; i< array.length ; i++){
+                                sum = sum + array[i];
+                                }
+                                return sum;
+                                }    
+                                console.log(sum([1,2,3,4,5,6,7,8,9]));
             
-// //Q)Return all the prime numbers in an array
+// //3.Q.d.)Return all the prime numbers in an array
 // //Arrow Function :
-    
-//        primeNumber = (numArray) => {
-//                       numArray = numArray.filter((number) => {
-//                         for (var i = 2; i <= Math.sqrt(number); i++) {
-//                           if (number % i === 0) return false;
-//                         }
-//                         return true;
-//                       });
-//                       console.log(numArray);
-//                   }  
-                  
-// //Q)  Return all the palindromes in an array
+
+var prime =[];
+var outp = (innum)=>{
+    for(var i=0; i<innum.length; i++) {
+    var sum = 0;
+    for(var j=1; j<=innum[i]; j++) {
+    if(innum[i]%j===0) {
+        sum = sum + 1;
+    }
+    }  
+    if(sum === 2) {
+        prime.push(innum[i]);
+    }
+    }
+    return prime;
+}
+console.log(outp([1,2,3,4,5,6,7,8,9]));
+
+
+// //3.Q.e.)  Return all the palindromes in an array
 // //Arrow Function: 
 
 //     Palindrome = (arr, n) =>
@@ -254,4 +281,5 @@
 //                     return false;
 //             }
 //             return true;
-//         }                    
+//         }           
+/* ************************************End Questions************************************ */         
