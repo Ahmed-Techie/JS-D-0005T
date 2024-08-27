@@ -11,6 +11,7 @@ function odd(arr){
 }
 console.log(odd(arr));
 
+
 //anonyomus function
 var arr = [12,13,14,15,17,19,21]
 var result =[];
